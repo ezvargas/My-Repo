@@ -12,6 +12,7 @@ public class LoginPage {
 	By accessButton = By.xpath(".//*[@id='nav-header-menu']/a[2]");
 	By loginButton = By.xpath(".//*[@id='login_user_form']/div[2]/input");
 	By submitButton = By.xpath(".//*[@id='main']/div[3]/form/div[2]/input");
+	By confirm = By.xpath(".//*[@id='nav-header-menu']/div/label");
 	
 	
 	public LoginPage(WebDriver driver)
@@ -26,7 +27,7 @@ public class LoginPage {
 	
 	public void typePassword()
 	{
-		driver.findElement(password).sendKeys("admin");
+		driver.findElement(password).sendKeys("1234");
 	}
 	
 	public void clickOnLoginButton()
@@ -42,5 +43,10 @@ public class LoginPage {
 	public void clickOnSubmitButton()
 	{
 		driver.findElement(submitButton).click();
+	}
+	
+	public String confirmAccess()
+	{
+		return driver.findElement(confirm).getText();
 	}
 }

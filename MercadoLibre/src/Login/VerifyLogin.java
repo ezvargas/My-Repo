@@ -7,6 +7,8 @@ public class VerifyLogin {
 
 	public void verityLogin()
 	{
+		String userName = "user";//Aca va el nombre de usuario
+		
 		WebDriver driver = new FirefoxDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.mercadolibre.com.ar/");
@@ -17,6 +19,11 @@ public class VerifyLogin {
 		login.clickOnLoginButton();
 		login.typePassword();
 		login.clickOnSubmitButton();
+		
+		if(userName == login.confirmAccess())
+		{
+			System.out.println("Login sucesss");
+		}
 		
 	}
 }
